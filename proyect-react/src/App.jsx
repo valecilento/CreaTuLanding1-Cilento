@@ -1,5 +1,14 @@
+import { ProductCard } from "./components/common/productCard/ProductCard";
+import { Navbar } from "./components/layouts/navbar/Navbar";
+import ItemListContainer from "./components/pages/itemListContainer/ItemListContainer";
 function App() {
-  return <h1>App</h1>
+	return (
+		<div>
+			<Navbar />
+			<ItemListContainer />
+			<ProductCard />
+		</div>
+	);
 }
 
-export default App
+export default App;
