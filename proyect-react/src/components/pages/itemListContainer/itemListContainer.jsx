@@ -1,5 +1,5 @@
 import { ProductCard } from "../../common/productCard/ProductCard";
-import { Welcome } from "../../common/welcome/welcome";
+import { Welcome } from "../../common/welcome/Welcome";
 import "./itemListContainer.css";
 
 const ItemListContainer = () => {

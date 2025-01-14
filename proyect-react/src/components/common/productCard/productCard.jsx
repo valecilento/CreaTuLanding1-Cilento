@@ -1,5 +1,6 @@
 import { Counter } from "../counter/Counter";
 import "./productCard.css";
+
 export const ProductCard = (props) => {
 	return (
 		<div className="container-productCard">

@@ -1,4 +1,5 @@
 import "./welcome.css";
+
 export const Welcome = (props) => {
 	return (
 		<div className="bienvenida">
