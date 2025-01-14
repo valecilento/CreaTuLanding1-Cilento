@@ -1,0 +1,12 @@
+.tarjetas {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	column-gap: 15px;
+	row-gap: 5px;
+}
+.tarjetas-producto {
+	background-color: rgb(224, 224, 221);
+	border-radius: 5px;
+	margin: 15px;
+}

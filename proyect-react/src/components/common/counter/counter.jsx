@@ -1,4 +1,6 @@
 import { useState } from "react";
+import "./counter.css";
+
 export const Counter = () => {
 	const [contador, setContador] = useState(0);
 	const sumar = () => {
@@ -12,9 +14,13 @@ export const Counter = () => {
 
 	return (
 		<div>
-			<button onClick={sumar}>Sumar</button>
-			<h2>contador: {contador}</h2>
-			<button onClick={restar}>Restar</button>
+			<button className="boton" onClick={sumar}>
+				Sumar
+			</button>
+			<button className="boton" onClick={restar}>
+				Restar
+			</button>
+			<h2 className="contador-boton">Cantidad: {contador}</h2>
 		</div>
 	);
 };
