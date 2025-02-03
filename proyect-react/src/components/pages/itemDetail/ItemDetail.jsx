@@ -18,12 +18,12 @@ const ItemDetail = () => {
 		<div className="container-productDetail">
 			<Card>
 				<CardMedia
-					sx={{ height: 220, width: 220 }}
+					sx={{ height: 300, width: 300 }}
 					image={item.imageUrl}
 					alt=""
 				/>
 				<CardContent>
-					<Typography>{item.title}</Typography>
+					<b>{item.title}</b>
 					<Typography>{item.price}</Typography>
 					<Typography>{item.description}</Typography>
 				</CardContent>
