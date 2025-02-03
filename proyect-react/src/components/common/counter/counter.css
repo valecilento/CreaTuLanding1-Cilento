@@ -1,12 +1,10 @@
 .boton {
-	padding: 7px 17px;
 	background-color: #95896e;
 	color: white;
 	border: none;
 	border-radius: 7px;
 	cursor: pointer;
-	margin-right: 10px;
 }
 .contador-boton {
-	font-size: large;
+	font-size: smaller;
 }

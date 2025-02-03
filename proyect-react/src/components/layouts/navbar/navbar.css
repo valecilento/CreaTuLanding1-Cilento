@@ -10,7 +10,11 @@
 	margin-top: 50px;
 	list-style: none;
 }
-li:hover {
+a {
+	text-decoration: none;
+	color: rgb(0, 0, 0);
+}
+a:hover {
 	font-weight: bold;
 	color: rgb(108, 100, 55);
 	cursor: pointer;

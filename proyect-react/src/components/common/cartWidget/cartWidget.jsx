@@ -1,11 +1,21 @@
-import { FaShoppingCart } from "react-icons/fa";
 import "./cartWidget.css";
+import { IconButton, styled } from "@mui/material";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCartOutlined";
+import Badge, { badgeClasses } from "@mui/material/Badge";
+import { Link } from "react-router-dom";
 
-export const CartWidget = () => {
+const CartBadge = styled(Badge)`
+	& .${badgeClasses.badge} {
+		top: -16px;
+	}
+`;
+export function CartWidget() {
 	return (
-		<div className="icono-carrito">
-			<div className="badge"> 0</div>
-			<FaShoppingCart />
-		</div>
+		<Link to="/cart">
+			<IconButton className="icono-carrito">
+				<ShoppingCartIcon fontSize="small" />
+				<CartBadge badgeContent={1} color="primary" overlap="circular" />
+			</IconButton>
+		</Link>
 	);
-};
+}
