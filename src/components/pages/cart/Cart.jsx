@@ -19,8 +19,9 @@ const Cart = () => {
 						<img src={product.imageUrl} alt="" className="img-carrito"></img>
 						<h2>{product.price}</h2>
 						<h2>{product.quantity}</h2>
-						<Button onClick={() => removeId(product.id)}>Eliminar</Button>
+						<Button onClick={() => removeId(product.id)}>Eliminar </Button>
 					</div>
+				//Modificar boton css
 				);
 			})}
 			<Button onClick={removeCart} className="button-carrito">Vaciar Carrito</Button>
