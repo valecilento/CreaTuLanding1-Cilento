@@ -6,7 +6,7 @@ import { Button } from "@mui/material";
 
 const Cart = () => {
 	const { cart, removeCart, removeId, getTotal} = useContext(CartContext);
-
+// Comentario dummy para probar git push
 	let total = getTotal()
 
 	return (
