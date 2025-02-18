@@ -21,8 +21,6 @@ export const Counter = ({item}) => {
 	const onAdd = () => {
 		item.quantity=contador;
 		addToCart(item);
-		let objetoDelCarrito = { ...item, quantity: contador };
-		console.log(objetoDelCarrito)
 	};
 	
 	return (

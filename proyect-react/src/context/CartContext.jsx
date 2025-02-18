@@ -10,8 +10,6 @@ export const CartContextProvider = ({ children }) => {
 		// verificar si ya está en el carrito. Para que no se duplique.
 		setCart([...cart, product]); //mantengo la información y le agrego el nuevo producto
 
-		
-		console.log(product.quantity)
 	};
 	const removeCart= () => {
 		setCart([]);

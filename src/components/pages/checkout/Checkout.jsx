@@ -13,7 +13,6 @@ const Checkout = () => {
 	};
 	const capturarDatos = (event) => {
 		const { value, name } = event.target;
-		console.log(value, name);
 		SetUserInfo({ ...userInfo, [name]: value });
 	};
 
