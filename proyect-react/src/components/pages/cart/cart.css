@@ -1,3 +1,12 @@
+.button-carrito{
+}
+.container-carrito{
+	display: flex;
+}
+.img-carrito{
+	width: 150px;
+	height: 150px;
+}
 .link-finalizaCompra {
 	display: flex;
 	justify-content: center;

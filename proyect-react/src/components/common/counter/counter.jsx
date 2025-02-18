@@ -1,18 +1,30 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import "./counter.css";
 import { Button, Stack } from "@mui/material";
+import { CartContext } from "../../../context/CartContext";
 
-export const Counter = () => {
-	const [contador, setContador] = useState(0);
-	const sumar = () => {
-		setContador(contador + 1);
+export const Counter = ({item}) => {
+	
+	const [contador, setContador] = useState(1);
+	const {addToCart} = useContext(CartContext);
+	
+	const sumar = () => {  
+		if (contador < item.stock) {
+			setContador(contador + 1);
+		}
 	};
 	const restar = () => {
-		if (contador > 0) {
+		if (contador > 1) {
 			setContador(contador - 1);
 		}
 	};
-
+	const onAdd = () => {
+		item.quantity=contador;
+		addToCart(item);
+		let objetoDelCarrito = { ...item, quantity: contador };
+		console.log(objetoDelCarrito)
+	};
+	
 	return (
 		<div>
 			<Stack direction="row" spacing={2}>
@@ -34,6 +46,7 @@ export const Counter = () => {
 				>
 					-
 				</Button>
+				<Button size="small" onClick={onAdd}>Agregar al carrito</Button>
 			</Stack>
 			<h2 className="contador-boton">Cantidad: {contador}</h2>
 		</div>

@@ -6,7 +6,7 @@ export let products = [
 		description: "Top de algodón gris",
 		imageUrl:
 			"https://res.cloudinary.com/dfwefql60/image/upload/v1738283054/Top-de-deporte-crop-DryMove_E2_84_A2---Gris-oscuro---H-M-PE_z6vsfv.jpg",
-		stock: 12,
+		stock: 6,
 		category: "Verano",
 	},
 	{
@@ -16,7 +16,7 @@ export let products = [
 		description: "Campera de invierno puffer",
 		imageUrl:
 			"https://res.cloudinary.com/dfwefql60/image/upload/v1738283008/NI_DJ6997-601-1_dwnuxn.jpg",
-		stock: 12,
+		stock: 8,
 		category: "Invierno",
 	},
 	{
@@ -26,7 +26,7 @@ export let products = [
 		description: "Short de jean negro",
 		imageUrl:
 			"https://res.cloudinary.com/dfwefql60/image/upload/v1738282928/10-e22ec794c66ed481c816988740968322-640-0_htlrcy.jpg",
-		stock: 12,
+		stock: 10,
 		category: "Verano",
 	},
 	{
@@ -56,7 +56,7 @@ export let products = [
 		description: "Polera negra",
 		imageUrl:
 			"https://res.cloudinary.com/dfwefql60/image/upload/v1738282604/polera-interior-termico-de-mujer-sassy_g4molv.jpg",
-		stock: 12,
+		stock: 5,
 		category: "Invierno",
 	},
 ];

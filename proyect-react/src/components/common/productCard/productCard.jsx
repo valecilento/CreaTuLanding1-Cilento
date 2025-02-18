@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Counter } from "../counter/Counter";
+{/*import { Counter } from "../counter/Counter";*/}
 import "./productCard.css";
 import {
 	Card,
@@ -8,6 +8,7 @@ import {
 	Typography,
 	Button,
 } from "@mui/material";
+
 
 export const ProductCard = ({ imageUrl, title, price, description, id }) => {
 	return (
@@ -23,7 +24,7 @@ export const ProductCard = ({ imageUrl, title, price, description, id }) => {
 					Ver detalle
 				</Button>
 			</Link>
-			<Counter />
+			{/*<Counter/>*/}
 		</Card>
 	);
 };
