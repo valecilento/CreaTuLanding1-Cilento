@@ -1,43 +1,42 @@
-import { products } from "../../../products";
 import { ProductCard } from "../../common/productCard/ProductCard";
 import { useEffect, useState } from "react";
 import { Welcome } from "../../common/welcome/Welcome";
 import "./itemListContainer.css";
 import { useParams } from "react-router-dom";
+import { db } from "../../../firebaseConfig";
+import{collection, getDocs, query, where} from "firebase/firestore"
 
 const ItemListContainer = () => {
 	const [items, setItems] = useState([]);
 	const { name } = useParams();
 
 	useEffect(() => {
-		let productsFiltered;
-		if (name) {
-			productsFiltered = products.filter(
-				(elemento) => elemento.category === name
-			);
+		let productsCollection = collection(db, "products");
+		let consulta = productsCollection;
+		if (name){
+			let collectionFiltrada = query( productsCollection, where ("category", "==", name))
+			consulta = collectionFiltrada;
+		
 		}
-		const getProducts = new Promise((resolve, reject) => {
-			const isLogged = true;
-			if (isLogged) {
-				resolve(!name ? products : productsFiltered);
-			} else {
-				reject({ statusCode: 400, message: "algo salió mal" });
-			}
-		});
-		getProducts
-			.then((response) => {
-				setItems(response);
+		
+		const getProducts = getDocs(consulta);
+		getProducts.then((res) => {
+			const array = res.docs.map(elemento => {
+				return{id: elemento.id, ...elemento.data()}
 			})
-			.catch((error) => {
-				console.log(error);
-			});
+			setItems(array)
+		})
+		.catch((error) => console.log(error));
 	}, [name]);
-
+	
 	return (
 		<div>
 			<Welcome name="Profesor" />
 			<h2>Productos de la tienda:</h2>
-			<div>
+			{items.length === 0 ?(  
+				<h1>Cargando...</h1>
+			) : (
+				<div>
 				<div className="tarjetas">
 					<div className="tarjetas-producto">
 						{items.map((elemento) => {
@@ -46,6 +45,7 @@ const ItemListContainer = () => {
 					</div>
 				</div>
 			</div>
+			)}
 		</div>
 	);
 };
