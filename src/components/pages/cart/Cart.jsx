@@ -26,10 +26,11 @@ const Cart = () => {
 			})}
 			<Button onClick={removeCart} className="button-carrito">Vaciar Carrito</Button>
 			<h3>El total a pagar es: {total} </h3>
-			<Link to="/Checkout" className="link-finalizaCompra">
+			{cart.length > 0 && (<Link to="/Checkout" className="link-finalizaCompra">
 				{" "}
 				Finalizar compra{" "}
-			</Link>
+			</Link>)}
+			
 		</div>
 	);
 };
