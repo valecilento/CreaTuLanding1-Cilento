@@ -2,10 +2,10 @@ import { CartContext } from "../../../context/CartContext";
 import "./chekout.css";
 import { useContext, useState } from "react";
 import { db } from "../../../firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, doc, updateDoc} from "firebase/firestore";
 
 const Checkout = () => {
-	const {cart, getTotal} = useContext(CartContext);
+	const {cart, getTotal,removeCart} = useContext(CartContext);
 	const [ticket, setTicket] = useState(null);
 	const [userInfo, SetUserInfo] = useState({
 		nombre: "",
@@ -22,10 +22,19 @@ const Checkout = () => {
 			total,
 		};
 
-	let ordersCollection = collection(db, "orders");
-	const newOrder = addDoc(ordersCollection, order);
-	newOrder.then((res) => setTicket(res.id));
+		let ordersCollection = collection(db, "orders");
+		const newOrder = addDoc(ordersCollection, order);
+		newOrder.then((res) => {
+			setTicket(res.id);
+			removeCart();
+		});
 
+		let productsCollection = collection(db, "products");
+
+		order.items.forEach((elemento) => {
+			let refDoc = doc(productsCollection, elemento.id);
+			updateDoc(refDoc, {stock: elemento.stock - elemento.quantity});
+		});
 	};
 
 	const capturarDatos = (event) => {

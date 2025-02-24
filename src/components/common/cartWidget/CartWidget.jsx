@@ -2,7 +2,7 @@ import "./cartWidget.css";
 import { IconButton, styled } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCartOutlined";
 import Badge, { badgeClasses } from "@mui/material/Badge";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { useContext } from "react";
 import { CartContext } from "../../../context/CartContext";
 

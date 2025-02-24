@@ -1,13 +1,12 @@
 import { useContext } from "react";
 import "./cart.css";
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import { CartContext } from "../../../context/CartContext";
 import { Button } from "@mui/material";
 
 const Cart = () => {
 	const { cart, removeCart, removeId, getTotal} = useContext(CartContext);
-// Comentario dummy para probar git push
-	let total = getTotal()
+	let total = getTotal();
 
 	return (
 		<div>

@@ -1,6 +1,6 @@
 import "./itemDetail.css";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams } from "react-router";
 import { Card, CardMedia, CardContent, Typography } from "@mui/material";
 import { Counter } from "../../common/counter/Counter";
 import { db } from "../../../firebaseConfig";
