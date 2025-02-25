@@ -20,7 +20,6 @@ const Cart = () => {
 						<h2>{product.quantity}</h2>
 						<Button onClick={() => removeId(product.id)}>Eliminar </Button>
 					</div>
-				//Modificar boton css
 				);
 			})}
 			<Button onClick={removeCart} className="button-carrito">Vaciar Carrito</Button>
@@ -29,7 +28,6 @@ const Cart = () => {
 				{" "}
 				Finalizar compra{" "}
 			</Link>)}
-			
 		</div>
 	);
 };
