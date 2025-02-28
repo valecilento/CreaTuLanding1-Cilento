@@ -29,7 +29,7 @@ const ItemDetail = () => {
 				/>
 				<CardContent>
 					<b>{item.title}</b>
-					<Typography>{item.price}</Typography>
+					<Typography>$ {item.price}</Typography>
 					<Typography>{item.description}</Typography>
 					<Typography> Stock: {item.stock} unidades disponibles.</Typography>
 					{(item.stock > 0) ?
