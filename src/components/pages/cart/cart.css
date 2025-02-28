@@ -1,11 +1,24 @@
 .container-carrito{
 	display: flex;
+	justify-content: center;
+	margin: 25px;
 }
 .img-carrito{
 	width: 150px;
 	height: 150px;
 }
 .link-finalizaCompra {
+	text-align: center;
+	margin-top: 25px;
+	color: #706e6b;
+    font-weight: bold;
+}
+.info-carrito{
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+}
+.total-carrito{
+	margin: 25px;
 }

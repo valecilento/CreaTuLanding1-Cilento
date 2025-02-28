@@ -18,16 +18,19 @@ const Cart = () => {
 						<img src={product.imageUrl} alt="" className="img-carrito"></img>
 						<h2>{product.price}</h2>
 						<h2>{product.quantity}</h2>
+						<h2>Stock disponible: {product.stock}</h2>
 						<Button onClick={() => removeId(product.id)}>Eliminar </Button>
 					</div>
 				);
 			})}
-			<Button onClick={removeCart} className="button-carrito">Vaciar Carrito</Button>
-			<h3>El total a pagar es: {total} </h3>
-			{cart.length > 0 && (<Link to="/Checkout" className="link-finalizaCompra">
-				{" "}
-				Finalizar compra{" "}
-			</Link>)}
+			<div className="info-carrito">
+				<Button onClick={removeCart}>Vaciar Carrito</Button>
+				<h3 className="total-carrito">El total a pagar es: {total} </h3>
+				{cart.length > 0 && (<Link to="/Checkout" className="link-finalizaCompra">
+					{" "}
+					Finalizar compra{" "}
+				</Link>)}
+			</div>
 		</div>
 	);
 };

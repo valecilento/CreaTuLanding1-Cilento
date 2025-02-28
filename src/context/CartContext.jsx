@@ -7,10 +7,20 @@ export const CartContextProvider = ({ children }) => {
 	const [cart, setCart] = useState([]);
 	
 	const addToCart = (product) => {
-		// verificar si ya está en el carrito. Para que no se duplique.
-		setCart([...cart, product]); //mantengo la información y le agrego el nuevo producto
-
+    //  verifico si ya esta en el carrito
+		let isInCart = cart.some((elemento) => elemento.id === product.id);
+		if (isInCart) {
+		cart.map(elemento => {
+			if(elemento.id === product.id){
+				elemento.quantity = elemento.quantity + product.quantity;
+			}
+			return elemento;
+		});
+		} else {
+		setCart([...cart, product]); //mantengo la información y le agrego el nuevo producto	
+		}
 	};
+
 	const removeCart= () => {
 		setCart([]);
 	}
@@ -33,8 +43,6 @@ export const CartContextProvider = ({ children }) => {
 		}, 0);
 		return totalItems;
 	}
-
-
 
 	let data = { cart, addToCart, removeCart, removeId, getTotal, getTotalItems };
 
