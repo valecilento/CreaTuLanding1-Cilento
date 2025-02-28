@@ -31,15 +31,15 @@ export const CartContextProvider = ({ children }) => {
 	}
 
 	const getTotal = () => {
-		let total = cart.reduce((suma, elemento)=> {
-			return suma + elemento.price * elemento.quantity;
+		let total = cart.reduce((acc, elemento)=> {
+			return acc + elemento.price * elemento.quantity;
 		}, 0);
 		return total;
 	}
 
 	const getTotalItems = () => {
-		let totalItems = cart.reduce ((suma, elemento) =>{
-			return suma + elemento.quantity;
+		let totalItems = cart.reduce ((acc, elemento) =>{
+			return acc + elemento.quantity;
 		}, 0);
 		return totalItems;
 	}
