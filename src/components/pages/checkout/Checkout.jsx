@@ -49,27 +49,27 @@ const Checkout = () => {
 				<h2>Compra realizada con éxito. Su número de orden es: {ticket}</h2>
 			): (
 				<form onSubmit={comprar} className="formulario">
-				<input
-					type="text"
-					placeholder="nombre"
-					name="nombre"
-					onChange={capturarDatos}
-				/>
-				<input
-					type="text"
-					placeholder="telefono"
-					name="telefono"
-					onChange={capturarDatos}
-				/>
-				<input
-					type="text"
-					placeholder="email"
-					name="email"
-					onChange={capturarDatos}
-				/>
-				<button className="boton-comprar">Comprar</button>
-			</form>
-			)};
+					<input
+						type="text"
+						placeholder="nombre"
+						name="nombre"
+						onChange={capturarDatos}
+					/>
+					<input
+						type="text"
+						placeholder="telefono"
+						name="telefono"
+						onChange={capturarDatos}
+					/>
+					<input
+						type="text"
+						placeholder="email"
+						name="email"
+						onChange={capturarDatos}
+					/>
+					<button className="boton-comprar">Comprar</button>
+				</form>
+			)}
 		</div>
 	);
 }
