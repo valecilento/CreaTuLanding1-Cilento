@@ -6,6 +6,7 @@ import { CartContext } from "../../../context/CartContext";
 export const Counter = ({item}) => {
 	
 	const [contador, setContador] = useState(1);
+	const [visible, setVisible] = useState(true);
 	const {addToCart} = useContext(CartContext);
 	
 	const sumar = () => {  
@@ -19,9 +20,13 @@ export const Counter = ({item}) => {
 		}
 	};
 	const onAdd = () => {
-		item.quantity=contador;
+		item.quantity=contador;		
 		addToCart(item);
+		setVisible(false); // Ocultar el componente Counter
 	};
+	if (!visible) {
+		return <h2>Producto añadido al carrito.</h2>; // Si el producto ya fue añadido al carrito, no se muestra el componente Counter
+	  }
 	
 	return (
 		<div>

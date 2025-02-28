@@ -32,7 +32,10 @@ const ItemDetail = () => {
 					<Typography>{item.price}</Typography>
 					<Typography>{item.description}</Typography>
 					<Typography> Stock: {item.stock} unidades disponibles.</Typography>
-					<Counter item={item}/>
+					{(item.stock > 0) ?
+						<Counter item={item}/>
+						: <Typography>Producto sin stock</Typography>
+					}
 				</CardContent>
 			</Card>
 		</div>
